@@ -12,7 +12,7 @@ def usage():
 
 def put_alarm(AlarmType,Threshold,Unit,INSTANCE_ID):
     cloudwatch.put_metric_alarm(
-        AlarmName='Server_%s_Utilization'%AlarmType,
+        AlarmName='Server_%s_%s_Utilization'%(AlarmType,INSTANCE_ID)
         ComparisonOperator='GreaterThanThreshold',
         EvaluationPeriods=1,
         MetricName=AlarmType,
